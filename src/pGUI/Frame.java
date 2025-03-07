@@ -13,7 +13,6 @@ public class Frame extends JFrame {
         panel.setLayout(new GridLayout(n, n));
         getContentPane().add(panel);
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        setSize(600, 600);
         setResizable(false);
         setVisible(true);
         try {

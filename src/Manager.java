@@ -37,18 +37,23 @@ public class Manager implements ActionListener {
                         // set image
                         setButtonImage(i, j);
 
-                        // change turn
-                        changeTurn();
-
                         // end check
                         if (pieceManager.checkWin(i, j)) {
                             endInfo();
                             end = true;
                         }
+
+                        // change turn
+                        if (!end) {
+                            changeTurn();
+                        }
                     }
                     break;
                 }
             }
+        }
+        if (turn == Group.BLACK && !end) {
+            // todo enable ai
         }
     }
 
@@ -74,10 +79,13 @@ public class Manager implements ActionListener {
 
     private void endInfo() {
         JFrame endFrame = new JFrame();
-        endFrame.add(new JLabel("GAME OVER"));
-        endFrame.setSize(100, 50);
+        endFrame.add(new JLabel("GAME OVER, " + turn.toString() + " WIN"));
+        endFrame.setSize(300, 150);
         endFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         endFrame.setResizable(false);
         endFrame.setVisible(true);
+        endFrame.pack();
+
+        frame.setTitle("GAME OVER, " + turn.toString() + " WIN");
     }
 }
