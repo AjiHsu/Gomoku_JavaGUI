@@ -11,9 +11,9 @@ import java.awt.event.ActionListener;
 public class Manager implements ActionListener {
     private final static int n = 15;
 
-    private Frame frame;
-    private ButtonManager buttonManager;
-    private PieceManager pieceManager;
+    private final Frame frame;
+    private final ButtonManager buttonManager;
+    private final PieceManager pieceManager;
 
     private Group turn;
     private boolean end;

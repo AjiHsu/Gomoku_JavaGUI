@@ -18,7 +18,7 @@ public class Frame extends JFrame {
         setVisible(true);
         try {
             UIManager.setLookAndFeel("com.sun.java.swing.plaf.windows.WindowsLookAndFeel");
-        } catch (Exception e) {
+        } catch (Exception ignored) {
         }
     }
 }
