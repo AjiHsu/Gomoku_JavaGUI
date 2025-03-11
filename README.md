@@ -2,10 +2,10 @@
 
 #### 2025/03/05 by Aji Hsu
 
-### How to install :
+### How to play & install :
 * download `release/Gomoku.jar`.
-* make sure that you have installed jre or jdk on your computer.
-* win+r open cmd and type: `java -jar Gomoku.jar`
+* make sure that you have installed jre (or jdk) on your computer.
+* win+r open cmd and type: `java -jar Gomoku.jar` (*or you can just double click the `Gomoku.jar`*).
 
 ### Appearance
 
