@@ -3,6 +3,12 @@
 #### 2025/03/05 by Aji Hsu
 
 ### How to play & install :
+AI:
+* download `release/AI/Gomoku_with_ai.jar`.
+* make sure that you have installed jre (or jdk) on your computer.
+* win+r open cmd and type: `java -jar Gomoku_with_ai.jar` (*or you can just double click the `Gomoku_with_ai.jar`*).
+
+1v1:
 * download `release/Gomoku.jar`.
 * make sure that you have installed jre (or jdk) on your computer.
 * win+r open cmd and type: `java -jar Gomoku.jar` (*or you can just double click the `Gomoku.jar`*).
