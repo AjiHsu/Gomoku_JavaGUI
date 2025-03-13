@@ -1,3 +1,4 @@
+import pAI.SimpleBest;
 import pGUI.ButtonManager;
 import pGUI.Frame;
 import pPiece.Group;
@@ -7,6 +8,7 @@ import pPiece.PieceManager;
 import javax.swing.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.util.List;
 
 public class Manager implements ActionListener {
     private final static int n = 15;
@@ -24,6 +26,7 @@ public class Manager implements ActionListener {
         pieceManager = new PieceManager();
         frame.pack();
         turn = Group.WHITE;
+        aiMove();
         end = false;
     }
 
@@ -52,8 +55,24 @@ public class Manager implements ActionListener {
                 }
             }
         }
-        if (turn == Group.BLACK && !end) {
-            // todo enable ai
+        if (turn == Group.WHITE && !end) {
+            aiMove();
+        }
+    }
+
+    private void aiMove() {
+        SimpleBest simpleBest = new SimpleBest(pieceManager);
+        List<Integer> move = simpleBest.getMove(turn);
+
+        pieceManager.setPieceAt(move.get(0), move.get(1), new Piece(move.get(0), move.get(1), turn));
+
+        setButtonImage(move.get(0), move.get(1));
+        if (pieceManager.checkWin(move.get(0), move.get(1))) {
+            endInfo();
+            end = true;
+        }
+        if (!end) {
+            changeTurn();
         }
     }
 
